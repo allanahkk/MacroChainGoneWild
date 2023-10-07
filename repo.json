@@ -4,7 +4,7 @@
 		"Name": "Macro Chain Gone Wild",
 		"InternalName": "MacroChainGoneWild",
 		"RepoUrl": "https://github.com/allanahkk/MacroChainGoneWild",
-		"IconUrl": "https://raw.githubusercontent.com/allanahkk/MacroChainGoneWild/master/icon.png"
+		"IconUrl": "https://raw.githubusercontent.com/allanahkk/MacroChainGoneWild/master/icon.png",
 		"DalamudApiLevel": 9,
 		"DownloadLinkInstall": "https://github.com/allanahkk/MacroChainGoneWild/releases/download/v0.1a/latest.zip",
 		"DownloadLinkTesting": "https://github.com/allanahkk/MacroChainGoneWild/releases/download/v0.1a/latest.zip",
