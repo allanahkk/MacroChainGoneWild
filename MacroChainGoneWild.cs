@@ -8,8 +8,8 @@ using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using FFXIVClientStructs.FFXIV.Client.UI.Shell;
 
-namespace MacroChain {
-    public sealed unsafe class MacroChain : IDalamudPlugin {
+namespace MacroChainGoneWild {
+    public sealed unsafe class MacroChainGoneWild : IDalamudPlugin {
 
         [PluginService] public static ICommandManager CommandManager { get; private set; } = null!;
         [PluginService] public static IFramework Framework { get; private set; } = null!;
@@ -25,7 +25,7 @@ namespace MacroChain {
 
         private Hook<MacroCallDelegate> macroCallHook;
         
-        public MacroChain() {
+        public MacroChainGoneWild() {
             macroCallHook = HookProvider.HookFromAddress<MacroCallDelegate>(new nint(RaptureShellModule.MemberFunctionPointers.ExecuteMacro), MacroCallDetour);
             macroCallHook.Enable();
 
@@ -88,7 +88,20 @@ namespace MacroChain {
                         RaptureShellModule.Instance()->ExecuteMacro(downMacro);
                     } else
                         Chat.PrintError("Can't use `/nextmacro down` on macro 90+");
-                } else {
+                    // added looping a macro
+                }
+                else if (args.ToLower() == "loop")
+                {
+                    if (lastExecutedMacro != null)
+                    {
+                        RaptureShellModule.Instance()->MacroLocked = false;
+                        RaptureShellModule.Instance()->ExecuteMacro(lastExecutedMacro);
+                    }
+                    else
+                        Chat.PrintError("Must use `/nextmacro loop` from within a macro.");
+                    // end 
+                }
+                else {
                     if (nextMacro != null) {
                         RaptureShellModule.Instance()->MacroLocked = false;
                         RaptureShellModule.Instance()->ExecuteMacro(nextMacro);
@@ -125,10 +138,10 @@ namespace MacroChain {
 
         public void OnRunMacroCommand(string command, string args) {
             try {
-                if (lastExecutedMacro != null) {
-                    Chat.PrintError("/runmacro is not usable while macros are running. Please use /nextmacro");
-                    return;
-                }
+                /* if (lastExecutedMacro != null) {
+                     Chat.PrintError("/runmacro is not usable while macros are running. Please use /nextmacro");
+                     return;
+                 } nah mate, let's be able to run a macro from another macro.. */
                 var argSplit = args.Split(' ');
                 var num = byte.Parse(argSplit[0]);
 

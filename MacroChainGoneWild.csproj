@@ -5,7 +5,7 @@
         <LangVersion>latest</LangVersion>
         <Platforms>x64</Platforms>
         <Configurations>Debug;Release</Configurations>
-        <RootNamespace>MacroChain</RootNamespace>
+        <RootNamespace>MacroChainGoneWild</RootNamespace>
     </PropertyGroup>
     <PropertyGroup Label="Build">
         <OutputType>Library</OutputType>
@@ -18,7 +18,7 @@
         <Version>2.1.1.0</Version>
     </PropertyGroup>
     <PropertyGroup>
-		<AssemblyName>MacroChain</AssemblyName>
+		<AssemblyName>MacroChainGoneWild</AssemblyName>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
