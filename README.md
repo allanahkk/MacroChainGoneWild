@@ -13,5 +13,6 @@ Allows executing any macro using `/runmacro`. This works from the chatbox or wit
 Use `/runmacro ##` to run a macro by number. `/runmacro ## [i|s]` to specify an individual or shared macro. Defaults to individual macros.
 
 ## Install
+[My Plugins Repo](https://github.com/allanahkk/DalamudPlugins/)
 
-add ```https://raw.githubusercontent.com/allanahkk/MacroChainGoneWild/master/mcgw.json``` to custom repos
+Add ```https://raw.githubusercontent.com/allanahkk/DalamudPlugins/master/repo.json``` to custom repos in Dalamud.
