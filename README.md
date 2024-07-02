@@ -15,4 +15,4 @@ Use `/runmacro ##` to run a macro by number. `/runmacro ## [i|s]` to specify an 
 ## Install
 [My Plugins Repo](https://github.com/allanahkk/DalamudPlugins/)
 
-Add ```https://raw.githubusercontent.com/allanahkk/DalamudPlugins/master/repo.json``` to custom repos in Dalamud.
+Add ```https://raw.githubusercontent.com/allanahkk/DalamudPlugins/main/repo.json``` to custom repos in Dalamud.
